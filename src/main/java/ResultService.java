@@ -17,7 +17,7 @@ public class ResultService {
 
     private static String getDatabaseHost() {
         String host = System.getenv("DB_HOST");
-        if (host == null || host.isEmpty()) host = "db"; // use Docker service name
+        if (host == null || host.isEmpty()) host = "host.docker.internal";
         return host;
     }
 
