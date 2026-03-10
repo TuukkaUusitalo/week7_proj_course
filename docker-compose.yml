@@ -20,7 +20,7 @@ services:
     #IMPORTANT docker build -t yourname/sum-product-fx .
     # docker push yourname/sum-product-fx: last
     # then you can change the image in the following statment
-    image: amirdirin/sum-product_fx:latest
+    image: tuusitalo/week7_task:latest
     container_name: calculator-app
     depends_on:
       - db
@@ -28,7 +28,7 @@ services:
       DB_HOST: db
       DB_PORT: 3306
       # make sure your DB_USER name is correct mine is root
-      DB_USER: root
+      DB_USER: calc_user
       # make sure your DB_PASSWORD is correct mine is root
       DB_PASSWORD: Test12
       DISPLAY: host.docker.internal:0
