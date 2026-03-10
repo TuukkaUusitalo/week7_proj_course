@@ -17,14 +17,26 @@ public class CalculatorController {
 
             double sum = num1 + num2;
             double product = num1 * num2;
+            double division = num1 / num2;
 
-            resultLabel.setText("Sum: " + sum + ", Product: " + product);
+            resultLabel.setText("Sum: " + sum + ", Product: " + product + ", Division: " + division);
 
             // Save to DB
             ResultService.saveResult(num1, num2, sum, product);
 
         } catch (NumberFormatException e) {
             resultLabel.setText("Please enter valid numbers!");
+        }
+    }
+    public String calculate(String a, String b) {
+        try {
+            double num1 = Double.parseDouble(a);
+            double num2 = Double.parseDouble(b);
+            double sum = num1 + num2;
+            double product = num1 * num2;
+            return "Sum: " + sum + ", Product: " + product;
+        } catch (NumberFormatException e) {
+            return "Please enter valid numbers!";
         }
     }
 }
